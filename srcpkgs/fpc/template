@@ -1,6 +1,6 @@
 # Template file for 'fpc'
 pkgname=fpc
-version=3.2.0
+version=3.2.2
 revision=1
 archs="x86_64* i686* ppc64le ppc64 ppc"
 build_wrksrc="${pkgname}build-${version}"
@@ -14,8 +14,8 @@ distfiles="${SOURCEFORGE_SITE}/freepascal/Source/${version}/${pkgname}build-${ve
 checksum=f9b914eace989a023fb953da203dc0d973b44487568b4138c7d5b9613d7d6838
 case "$XBPS_TARGET_MACHINE" in
 x86_64*)
-	distfiles+=" ${SOURCEFORGE_SITE}/freepascal/Linux/${version}/${pkgname}-${version}-1.x86_64.rpm"
-	checksum+=" 1f74e1ad3ced2dd67688fdb92edd42e73cdc31ef96056f8739449d70a9306f2c"
+	distfiles+=http://downloads.freepascal.org/fpc/dist/${version}/x86_64-linux/fpc-${version}.x86_64-linux.tar
+	checksum+="5adac308a5534b6a76446d8311fc340747cbb7edeaacfe6b651493ff3fe31e83"
 	;;
 i686*)
 	distfiles+=" ${SOURCEFORGE_SITE}/freepascal/Linux/${version}/${pkgname}-${version}-1.i686.rpm"
