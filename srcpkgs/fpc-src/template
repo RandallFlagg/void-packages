@@ -1,13 +1,14 @@
 # Template file for 'fpc-src'
 pkgname=fpc-src
-version=3.2.0
+version=3.2.2
 revision=1
 short_desc="Source code for FreePascal compiler"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="LGPL-2.0-or-later"
 homepage="https://www.freepascal.org"
-distfiles="ftp://ftp.freepascal.org/pub/fpc/dist/${version}/source/fpcbuild-${version}.tar.gz"
-checksum=f9b914eace989a023fb953da203dc0d973b44487568b4138c7d5b9613d7d6838
+#distfiles="ftp://ftp.freepascal.org/pub/fpc/dist/${version}/source/fpcbuild-${version}.tar.gz"
+distfiles="http://mirror.freemirror.org/pub/fpc/dist/3.2.2/source/fpc-3.2.2.source.tar.gz"
+checksum=5adac308a5534b6a76446d8311fc340747cbb7edeaacfe6b651493ff3fe31e83
 nostrip=yes
 
 do_install() {
