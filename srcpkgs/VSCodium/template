@@ -1,0 +1,15 @@
+# Template file for 'VSCodium'
+pkgname=VSCodium
+version=1.84.2.23319
+archs="x86_64"
+revision=1
+short_desc="Free/Libre Open Source Software Binaries of VS Code"
+maintainer="Randall Flagg <O@G>"
+license="MIT"
+homepage="https://vscodium.com/"
+distfiles="https://github.com/VSCodium/vscodium/releases/download/${version}/VSCodium-linux-x64-${version}.tar.gz"
+checksum=f5dbd8d14ea112ef3e3c2a5bf847e109cede272fc08233191b6f646196dea304
+
+do_install() {
+	vbin codium
+}
