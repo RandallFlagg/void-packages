@@ -1,0 +1,38 @@
+# Template file for 'TortoiseGit'
+pkgname=TortoiseGit-dolphin
+version=0.1.0
+revision=0
+archs="*"
+depends="wine,kdialog"
+makedepends="git"
+short_desc="TortoiseGit provides a powerful context menu for Git and much more!"
+maintainer="Randallflagg <O@G>"
+license="GPL"
+homepage="https://tortoisegit.org"
+repository=bootstrap
+
+do_fetch(){
+	echo "Fetch: Folder: ${wrksrc}"
+	rm -rf ${wrksrc}
+	git clone --filter=blob:none --depth 1 --branch main https://github.com/TortoiseGit-on-Linux/TortoiseGit-Linux-Dolphin.git ${wrksrc}
+	cd ${wrksrc}
+}
+
+do_install() {
+	# wrksrc
+# 	vmkdir ~/.local/share/kio/servicemenus
+#     vmkdir /usr/share/kio/servicemenus
+	echo "Install: wrksrc: ${wrksrc}"
+	echo "Install: PWD: ${pwd}"
+	pwd
+ 	echo "Install: PKGDESTDIR: ${PKGDESTDIR}"
+
+	vcopy ${wrksrc}/usr /
+	vinstall ${wrksrc}/usr/share/kio/servicemenus/tortoiseGit.desktop 0555 /usr/share/kio/servicemenus
+	vinstall ${wrksrc}/usr/bin/tortoiseGitCmd 0555 /usr/bin
+}
+
+# post_install(){
+#  	chmod +x ${PKGDESTDIR}/usr/share/kio/servicemenus/tortoiseGit.desktop
+#  	chmod +x ${PKGDESTDIR}/usr/bin/tortoiseGitCmd
+# }
