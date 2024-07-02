@@ -1,0 +1,53 @@
+# Template file for 'anydesk'
+pkgname=peazip
+description="PeaZip is a free file archiver utility, similar to WinRar, WinZip, and 7-Zip (or File Roller, and Ark on Linux), based on Open Source technologies of 7-Zip / p7zip archiver, Facebook Zstandard compressor, FreeArc, Google Brotli compressor, PAQ family of compressors, PEA (archiving and encryption) project, and other Free Software file compression tools."
+version=9.8.0
+revision=1
+# ${EPOCHSECONDS}
+archs="x86_64-*"
+#create_wrksrc=yes
+# hostmakedepends="patchelf"
+#depends="qt5pas - This is needed for the QT version"
+short_desc="PeaZip is a free file archiver utility, similar to WinRar, WinZip, and 7-Zip (or File Roller, and Ark on Linux)."
+maintainer="Randall Flagg <ykpui@hotmail.com>"
+license="LGPL3"
+homepage="https://peazip.github.io"
+# nopie=yes
+# restricted=yes
+distfiles="https://github.com/peazip/PeaZip/archive/refs/tags/${version}.tar.gz"
+checksum="5357db6e4086cd2ec03d508fc860e97a81ff0f2ea53fc2ec494b2f2eaac64dfb"
+
+
+# do_build() {
+# 	patchelf --remove-needed libpangox-1.0.so.0 usr/bin/anydesk
+# }
+
+# post_extract(){
+# echo "SUCCESS2"
+#
+# }
+
+pre_install(){
+	echo "PRE INSTALL START"
+# 	mkdir -p "${pkgname}-${version}"/usr/share/applications
+# 	ls -la ${pkgname}-${version}
+# 	mv "${pkgname}-${version}"/icons/ "${pkgname}-${version}"/usr/share/
+# 	mv "${pkgname}-${version}"/anydesk.desktop "${pkgname}-${version}"/usr/share/applications/
+# 	ls -laR ${pkgname}-${version}/usr/share
+	echo "PRE INSTALL DONE"
+}
+
+do_install() {
+echo "DO INSTALL START"
+# 	vlicense "${pkgname}-${version}"/copyright
+# # 	rm -rf "${pkgname}-${version}"
+# 	vbin "${pkgname}-${version}"/anydesk
+# 	vcopy "${pkgname}-${version}"/usr/share/* /usr/share/
+# 	echo "AAA1"
+# 	pwd
+# 	ls -la /usr/share
+# 	echo "AAA2"
+# 	echo "SUCCESS"
+# 	# 	copy "*" /
+echo "DO INSTALL DONE"
+}
